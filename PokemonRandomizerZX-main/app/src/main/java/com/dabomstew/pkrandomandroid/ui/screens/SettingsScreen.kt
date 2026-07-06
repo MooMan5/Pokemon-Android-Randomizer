@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material.icons.filled.Info
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
@@ -102,6 +103,7 @@ fun SettingsScreen(
     var randomizeTradeIVs by remember { mutableStateOf(editableSettings.isRandomizeInGameTradesIVs) }
     var randomizeTradeItems by remember { mutableStateOf(editableSettings.isRandomizeInGameTradesItems) }
     val firstFocusRequester = remember { FocusRequester() }
+    var showMoreInfo by remember { mutableStateOf(false) }
 
     LaunchedEffect(controllerConnected) {
         if (controllerConnected) {
@@ -112,6 +114,10 @@ fun SettingsScreen(
     // Helper — mutates the local copy only; nothing is committed until Save is tapped.
     fun applyToSettings(block: Settings.() -> Unit) {
         editableSettings.block()
+    }
+
+    if (showMoreInfo) {
+        SettingsInfoDialog(onDismiss = { showMoreInfo = false })
     }
 
     Scaffold(
@@ -144,16 +150,29 @@ fun SettingsScreen(
                 containerColor = MaterialTheme.colorScheme.surface,
                 tonalElevation = 3.dp
             ) {
-                Button(
-                    onClick = {
-                        viewModel.commitSettings(editableSettings)
-                        onBack()
-                    },
+                Row(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(horizontal = 16.dp, vertical = 4.dp)
+                        .padding(horizontal = 16.dp, vertical = 4.dp),
+                    horizontalArrangement = Arrangement.spacedBy(8.dp)
                 ) {
-                    Text("Save")
+                    OutlinedButton(
+                        onClick = { showMoreInfo = true },
+                        modifier = Modifier.weight(1f)
+                    ) {
+                        Icon(Icons.Default.Info, contentDescription = null)
+                        Spacer(Modifier.width(8.dp))
+                        Text("More Info")
+                    }
+                    Button(
+                        onClick = {
+                            viewModel.commitSettings(editableSettings)
+                            onBack()
+                        },
+                        modifier = Modifier.weight(1f)
+                    ) {
+                        Text("Save")
+                    }
                 }
             }
         }
