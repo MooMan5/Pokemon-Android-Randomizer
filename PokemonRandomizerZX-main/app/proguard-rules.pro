@@ -1,0 +1,7 @@
+-keep class com.dabomstew.pkrandom.** { *; }
+-keep class compressors.** { *; }
+-keep class cuecompressors.** { *; }
+-keep class pptxt.** { *; }
+-keep class thenewpoketext.** { *; }
+-dontwarn java.awt.**
+-dontwarn javax.swing.**
