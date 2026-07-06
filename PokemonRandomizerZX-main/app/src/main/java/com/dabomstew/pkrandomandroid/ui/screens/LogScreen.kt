@@ -53,7 +53,7 @@ fun LogScreen(
                             val shareIntent = Intent(Intent.ACTION_SEND).apply {
                                 type = "text/plain"
                                 putExtra(Intent.EXTRA_TEXT, log ?: "")
-                                putExtra(Intent.EXTRA_SUBJECT, "Pokemon Randomizer ZX Log")
+                                putExtra(Intent.EXTRA_SUBJECT, "PokemonrandomizerAC Log")
                             }
                             context.startActivity(
                                 Intent.createChooser(shareIntent, "Share Log")

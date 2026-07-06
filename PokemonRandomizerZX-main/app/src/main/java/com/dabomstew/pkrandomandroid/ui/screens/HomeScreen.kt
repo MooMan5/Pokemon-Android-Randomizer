@@ -126,7 +126,7 @@ fun HomeScreen(
                 title = {
                     Column {
                         Text(
-                            "Pokemon Randomizer ZX",
+                            "PokemonrandomizerAC",
                             style = MaterialTheme.typography.titleLarge
                         )
                         Text(
