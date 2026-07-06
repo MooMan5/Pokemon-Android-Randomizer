@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PokemonrandomizerAC</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f6f8fb;
+      --panel: #ffffff;
+      --text: #18202f;
+      --muted: #5a6678;
+      --accent: #2d6cdf;
+      --accent-strong: #1e4ea3;
+      --border: #d8deea;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #11151d;
+        --panel: #1a202c;
+        --text: #f2f5f9;
+        --muted: #b5bfce;
+        --accent: #7aa7ff;
+        --accent-strong: #a9c5ff;
+        --border: #313a4b;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+    }
+
+    main {
+      width: min(940px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 48px 0;
+    }
+
+    .hero {
+      padding: 32px;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+
+    h2 {
+      margin: 32px 0 12px;
+      font-size: 1.35rem;
+      letter-spacing: 0;
+    }
+
+    p {
+      margin: 0 0 16px;
+      color: var(--muted);
+    }
+
+    ul,
+    ol {
+      margin: 0;
+      padding-left: 1.4rem;
+      color: var(--muted);
+    }
+
+    li + li {
+      margin-top: 6px;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .button {
+      display: inline-flex;
+      min-height: 48px;
+      align-items: center;
+      justify-content: center;
+      padding: 0 18px;
+      border-radius: 6px;
+      border: 1px solid var(--accent);
+      background: var(--accent);
+      color: #ffffff;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .button.secondary {
+      background: transparent;
+      color: var(--accent-strong);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .card {
+      padding: 20px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--panel);
+    }
+
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 1rem;
+      letter-spacing: 0;
+    }
+
+    .notice {
+      margin-top: 24px;
+      padding: 16px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--panel);
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <h1>PokemonrandomizerAC</h1>
+      <p>
+        An Android app for randomizing supported Pokemon ROMs directly on an
+        Android phone, tablet, or handheld console.
+      </p>
+      <div class="actions">
+        <a class="button" href="downloads/PokemonrandomizerAC-debug.apk" download>
+          Download APK
+        </a>
+        <a class="button secondary" href="https://github.com/Ajarmar/universal-pokemon-randomizer-zx">
+          Original Randomizer ZX
+        </a>
+      </div>
+    </section>
+
+    <section>
+      <h2>What It Does</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Randomize On Device</h3>
+          <p>Pick a ROM, choose an output file, configure settings, and create a randomized ROM without a desktop PC.</p>
+        </article>
+        <article class="card">
+          <h3>Controller Friendly</h3>
+          <p>The app is built for handheld Android consoles and can be navigated with a controller.</p>
+        </article>
+        <article class="card">
+          <h3>Detailed Settings</h3>
+          <p>Use the settings menu to adjust randomization options for Pokemon, moves, trainers, items, evolutions, and more.</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Install</h2>
+      <ol>
+        <li>Download the APK using the button above.</li>
+        <li>Copy it to your Android device if you downloaded it on another computer.</li>
+        <li>Open the APK on Android and allow installation from your browser or file manager if prompted.</li>
+        <li>Launch PokemonrandomizerAC and select your legally owned ROM file.</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>Requirements</h2>
+      <ul>
+        <li>Android 8.0 or newer.</li>
+        <li>A legally owned ROM file for a supported Pokemon game.</li>
+        <li>Enough storage space for the input ROM and randomized output ROM.</li>
+      </ul>
+    </section>
+
+    <p class="notice">
+      PokemonrandomizerAC does not include, host, or distribute ROM files.
+      Pokemon and related names are trademarks of Nintendo, Game Freak, and The Pokemon Company.
+    </p>
+  </main>
+</body>
+</html>
